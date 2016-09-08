@@ -20,5 +20,5 @@ node genpages.js > deploy/index.html
   git reset origin/gh-pages
   git add .
   git commit -m "Deploy automático de ${rev}"
-  git push --quiet upstream HEAD:gh-pages >/dev/null 2>&1
+  git push --quiet origin HEAD:gh-pages >/dev/null 2>&1
 )
