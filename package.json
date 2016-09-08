@@ -1,0 +1,19 @@
+{
+  "name": "huayra-botonera",
+  "version": "0.1.0",
+  "description": "Un fork de la botonera de ftoledo para evadir su falta de luz",
+  "scripts": {
+    "genpages": "node genpages.js && exit 1",
+    "deploy": "./deploy.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iglosiggio/botonera.git"
+  },
+  "author": "Ignacio E. Losiggio",
+  "license": "WTFPL",
+  "bugs": {
+    "url": "https://github.com/iglosiggio/botonera/issues"
+  },
+  "homepage": "https://github.com/iglosiggio/botonera#readme"
+}
