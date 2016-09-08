@@ -14,5 +14,5 @@ node genpages.js > deploy/index.html;
   git config user.email "iglosiggio@gmail.com";
   git add .
   git commit -m "Deploy automático"
-  git push --force --quiet "http://${GH_TOKEN}@${GH_REF}" master:gh-pages >/dev/null 2>&1;
+  git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:gh-pages >/dev/null 2>&1;
 )
