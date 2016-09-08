@@ -3,7 +3,7 @@ var hbs = require('handlebars');
 var template_raw = fs.readFileSync('template.hbs').toString();
 var sonidos = fs.readdirSync('sonidos');
 var extension = /\.[^.]+$/;
-var espacios = /[_-]/;
+var espacios = /[_-]/g;
 
 var archivos = sonidos.map((sonido) => ({
     archivo: `sonidos/${sonido}`,
