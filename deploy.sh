@@ -13,6 +13,7 @@ npm install
 # Hacemos la carpeta de deploy y generamos la página
 mkdir deploy
 cp -r sonidos deploy
+cp huayra-botona.png deploy
 node genpages.js > deploy/index.html
 
 (
