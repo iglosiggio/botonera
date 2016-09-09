@@ -27,7 +27,7 @@ node genpages.js > deploy/index.html
   git fetch origin
   git reset origin/gh-pages
   # Agregamos todo lo que haya cambiado y commiteamos
-  git add .
+  git add -A .
   git commit -m "Deploy automático de ${rev}"
   # Pusheamos a gh-pages
   git push --quiet origin HEAD:gh-pages >/dev/null 2>&1
