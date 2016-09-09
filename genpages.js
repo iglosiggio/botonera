@@ -37,8 +37,11 @@ var categorias = archivos.reduce((categorias, archivo) => {
     return categorias;
 }, {});
 
+var descategorizados = categorias[categoria_default];
+delete categorias[categoria_default];
+
 var template = hbs.compile(template_raw);
-debugger;
-var resultado = template({archivos, categorias});
+
+var resultado = template({archivos, categorias, categoria_default, descategorizados});
 
 console.log(resultado);
