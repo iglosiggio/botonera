@@ -2,38 +2,50 @@
 <html>
 <head>
     <style>
-    body { width: 90%; }
-    audio { visibility: hidden; }
+    body {
+        width: 90%;
+    }
+
+    audio {
+        visibility: hidden;
+    }
+
     button {
-    outline: none;
-    background: #3498db;
-    background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
-    background-image: -moz-linear-gradient(top, #3498db, #2980b9);
-    background-image: -ms-linear-gradient(top, #3498db, #2980b9);
-    background-image: -o-linear-gradient(top, #3498db, #2980b9);
-    background-image: linear-gradient(to bottom, #3498db, #2980b9);
-    -webkit-border-radius: 7;
-    -moz-border-radius: 7;
-    border-radius: 7px;
-    border-style: hidden;
-    text-shadow: 1px 1px 1px #666666;
-    font-family: Arial;
-    color: #ffffff;
-    font-size: 22px;
-    padding: 6px 16px 10px 16px;
-    text-decoration: none;
-    margin-bottom: 5px;
-    margin-right: 0px;
+        outline: none;
+        background: #3498db;
+        background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+        background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+        background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+        background-image: -o-linear-gradient(top, #3498db, #2980b9);
+        background-image: linear-gradient(to bottom, #3498db, #2980b9);
+        -webkit-border-radius: 7;
+        -moz-border-radius: 7;
+        border-radius: 7px;
+        border-style: hidden;
+        text-shadow: 1px 1px 1px #666666;
+        font-family: Arial;
+        color: #ffffff;
+        font-size: 22px;
+        padding: 6px 16px 10px 16px;
+        text-decoration: none;
+        margin-bottom: 5px;
+        margin-right: 0px;
     }
 
     button:hover {
-      background: #3cb0fd;
-      text-decoration: none;
+        background: #3cb0fd;
+        text-decoration: none;
     }
+
     button::-moz-focus-inner,
     input[type="button"]::-moz-focus-inner,
     input[type="submit"]::-moz-focus-inner {
-     border: 1px dotted transparent;
+        border: 1px dotted transparent;
+    }
+
+    .categoria {
+        display: inline-block;
+        margin-left: 1em;
     }
     </style>
     <title>La huayrabotonera!</title>
@@ -45,7 +57,7 @@
 <body>
     <h1>Botonera</h1>
 {{#each categorias as |archivos categoria|}}
-    <div id="{{categoria}}">
+    <div id="{{categoria}}" class="categoria">
         <h3>{{categoria}}</h3>
         <div class="sonidos" id="sonidos-{{categoria}}">
     {{#each archivos}}
