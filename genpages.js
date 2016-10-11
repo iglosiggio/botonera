@@ -1,11 +1,9 @@
-var fs = require('fs');
-var hbs = require('handlebars');
-var template_raw = fs.readFileSync('template.hbs').toString();
-var sonidos = fs.readdirSync('sonidos');
+const fs = require('fs');
+const hbs = require('handlebars');
+const template_raw = fs.readFileSync('template.hbs').toString();
 const extension = /\.[^.]+$/;
 const espacios = /[_-]/g;
 const categoria = /^([A-Z]+) /;
-const categoria_default = 'OTROS';
 
 function nombre(sonido, con_categoria) {
     var nombre = sonido
@@ -17,31 +15,17 @@ function nombre(sonido, con_categoria) {
         : nombre.replace(categoria, '');
 }
 
-function categoria_o_default(sonido) {
-    var match = categoria.exec(nombre(sonido, true));
-    return match? match[1] : categoria_default;
-}
-
-var archivos = sonidos.map((sonido) => ({
-    archivo: `sonidos/${sonido}`,
-    categoria: categoria_o_default(sonido),
-    nombre: nombre(sonido)
+const categorias = fs.readdirSync('sonidos').map((categoria) => ({
+    nombre: nombre(categoria),
+    archivos: fs.readdirSync(`sonidos/${categoria}`).map((sonido) => ({
+        archivo: `sonidos/${categoria}/${sonido}`,
+        categoria: categoria,
+        nombre: nombre(sonido)
+    }))
 }));
-
-var categorias = archivos.reduce((categorias, archivo) => {
-    if(categorias[archivo.categoria]) {
-        categorias[archivo.categoria].push(archivo);
-    } else {
-        categorias[archivo.categoria] = [archivo];
-    }
-    return categorias;
-}, {});
-
-var descategorizados = categorias[categoria_default];
-delete categorias[categoria_default];
 
 var template = hbs.compile(template_raw);
 
-var resultado = template({archivos, categorias, categoria_default, descategorizados});
+var resultado = template({categorias});
 
 console.log(resultado);

@@ -57,10 +57,10 @@
 <body>
     <h1>Botonera</h1>
     <div id="botonera">
-    {{#each categorias as |archivos categoria|}}
-        <div id="{{categoria}}" class="categoria">
-            <h3>{{categoria}}</h3>
-            <div class="sonidos" id="sonidos-{{categoria}}">
+    {{#each categorias}}
+        <div id="{{nombre}}" class="categoria">
+            <h3>{{nombre}}</h3>
+            <div class="sonidos" id="sonidos-{{nombre}}">
         {{#each archivos}}
             <audio id="{{archivo}}" src="{{archivo}}" preload="true">Tu navegador no soporta el elemento <code>audio</code>.</audio>
             <button onclick="document.getElementById('{{archivo}}').play();">{{nombre}}</button>
@@ -68,15 +68,6 @@
             </div>
         </div>
     {{/each}}
-        <div id="{{categoria_default}}" class="categoria">
-            <h3>{{categoria_default}}</h3>
-            <div class="sonidos" id="sonidos-{{categoria_default}}">
-        {{#each descategorizados}}
-            <audio id="{{archivo}}" src="{{archivo}}" preload="true">Tu navegador no soporta el elemento <code>audio</code>.</audio>
-            <button onclick="document.getElementById('{{archivo}}').play();">{{nombre}}</button>
-        {{/each}}
-            </div>
-        </div>
     </div>
     <a href="https://github.com/iglosiggio/botonera">
         <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" />
