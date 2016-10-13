@@ -18,6 +18,8 @@ node genpages.js > deploy/index.html
 
 (
   cd deploy
+  # Queremos que nos tomen las carpetas que empiezan con _ (fuente: http://stackoverflow.com/a/39691475)
+  touch .nojekyll
   # Iniciamos un repo vacío con la data del boto
   git init
   git config user.name "Autopush (Travis-CI)"
